@@ -18,7 +18,7 @@ controller.save = (req,res) => {
     const data = req.body;
     req.getConnection((err, conn) => {
         conn.query('INSERT INTO usuario set ?', [data], (err, usuarios) =>{
-            res.redirect('/');
+            res.redirect('/user');
         })
     })
 }
@@ -27,7 +27,7 @@ controller.update = (req,res) => {
     const newUsuario = req.body;
     req.getConnection((err, conn) =>{
         conn.query('UPDATE usuario set ? where cc_usuario=?', [newUsuario, id], (err, usuarios) =>{
-            res.redirect('/');
+            res.redirect('/user');
         })
     })
 }
@@ -45,7 +45,7 @@ controller.delete = (req,res) => {
     const { id }= req.params;
     req.getConnection((err, conn) => {
         conn.query('DELETE FROM usuario WHERE cc_usuario=?', [id], (err, usuarios) =>{
-            res.redirect('/');
+            res.redirect('/user');
         })
     })
 }

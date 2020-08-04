@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const coustomerController = require('../controllers/coustomercontrollers');
 
-router.get('/', coustomerController.list);
+router.get('/user', coustomerController.list);
 router.post('/add', coustomerController.save);
 router.get('/delete/:id', coustomerController.delete);
 
